@@ -75,8 +75,8 @@ Projeto de estudo de funcionamento de uma API Rest com Laravel 9, neste pequeno 
 - Altera uma tarefa pelo seu id, usando o VERBO PUT -> http://localhost:8000/api/todo/id_informado no body passar os campos com seus valores
 - Apaga uma tarefa pelo seu id, usando o VERBO DELETE -> http://localhost:8000/api/todo/id_informado
 
-### Teste de paginação
-- a ser realizado
+### Usando paginação
+- Foi realizada utilizando o simplePaginate
 
 ### Traduçao de erros
 - a ser realizado

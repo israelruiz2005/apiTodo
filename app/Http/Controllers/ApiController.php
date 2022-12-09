@@ -31,11 +31,29 @@ class ApiController extends Controller
         return $data;
    }
 
+   //Exemplo de pesquisa sem paginação
+   
+   /*
    public function readAllTodos(){
         $data = ['error'=> ''];
+        
         $data['list'] = Todo::all();
         return $data;
    }
+*/
+//Exemplo com paginação
+public function readAllTodos(){
+    $data = ['error'=> ''];
+    
+    $todos = Todo::simplePaginate(3);
+    if(!$todos){
+        $data = ['error'=> 'Não foram encontradas tarefas!']; 
+        return $data;
+    }
+    $data['list'] = $todos->items();
+    $data['current_page']=$todos->currentPage();
+    return $data;
+}
 
    public function readTodo($id){
         $data = ['error'=> ''];
